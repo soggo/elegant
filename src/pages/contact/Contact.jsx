@@ -9,7 +9,7 @@ const Contact = () => {
           </div>
 
           <section className="flex flex-col md:flex-row items-center gap-15  bg-gray-200">
-              <img src="/src/assets/close2.png" alt="" className="md:w-140"/>
+              <img src="close2.png" alt="" className="md:w-140"/>
               <div className="flex flex-col gap-5">
                   <h3 className='text-3xl'>About Us</h3>
                  
@@ -24,19 +24,19 @@ const Contact = () => {
           <div className="flex flex-col md:flex-row gap-3">
 
               <div className="bg-gray-300 md:w-90 h-35 flex flex-col items-center pt-2">
-                  <img src="/src/assets/store.png" alt="" />
+                  <img src="store.png" alt="" />
                   <p>Address</p>
                   <p className="text-center">234 Hai Trieu, Ho Chi Minh City, 
                   Viet Nam</p>
               </div>
               <div className="bg-gray-300 md:w-90 h-35 flex flex-col items-center pt-2">
-                  <img src="/src/assets/phone.png" alt="" />
+                  <img src="phone.png" alt="" />
                   <p>Contact Us</p>
                   <p>+84 234 567 890</p>
 
               </div>
               <div className="bg-gray-300 md:w-90 h-35 flex flex-col items-center pt-2">
-                  <img src="/src/assets/mail.png" alt="" />
+                  <img src="mail.png" alt="" />
                   <p>EMAIL</p>
                   <p>hello@3legant.com</p>
               </div>

@@ -7,9 +7,9 @@ import { products } from '/src/data/productinfo';
 
 const Product = () => {
   const reviews = [
-    {id:1, proifle:'/src/assets/avatar.png', review:'I bought it 3 weeks ago and now come back just to say "Awesome Product". I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident',rname:'Sofia Harvertsz'},
-    {id:1, proifle:'/src/assets/avatar.png', review:'I bought it 3 weeks ago and now come back just to say "Awesome Product". I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident',rname:'Sofia Harvertsz'},
-    {id:1, proifle:'/src/assets/avatar.png', review:'I bought it 3 weeks ago and now come back just to say "Awesome Product". I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident',rname:'Sofia Harvertsz'}
+    {id:1, proifle:'/avatar.png', review:'I bought it 3 weeks ago and now come back just to say "Awesome Product". I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident',rname:'Sofia Harvertsz'},
+    {id:1, proifle:'/avatar.png', review:'I bought it 3 weeks ago and now come back just to say "Awesome Product". I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident',rname:'Sofia Harvertsz'},
+    {id:1, proifle:'/avatar.png', review:'I bought it 3 weeks ago and now come back just to say "Awesome Product". I really enjoy it. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupt et quas molestias excepturi sint non provident',rname:'Sofia Harvertsz'}
   ]
   const [review, setReview] = useState('');
   const [isOpen, setIsOpen] = useState(false);
@@ -50,8 +50,8 @@ const { productId } = useParams();
   const options = ['Newest', 'Oldest', 'Most Liked'];
     return (
       <>
-      <div className="flex flex-col w-[311px] mx-auto border  md:w-[1120px]">
-          <div className="flex  md:flex-row border border-amber-800">
+      <div className="flex flex-col w-[311px] mx-auto   md:w-[1120px]">
+          <div className="flex  md:flex-row ">
             <div className="flex flex-col">
               <p>Home &gt; Shop &gt; Living Room &gt; Product</p>
 
@@ -81,10 +81,10 @@ const { productId } = useParams();
                     <p>Black</p>
 
                     <div className="flex md:w-[314px] h-[72px] border gap-3 ">
-                      <img src="/src/assets/stable4.jpeg" alt="" className="w-full h-full object-contain"/>
-                      <img src="/src/assets/stable4.jpeg" alt="" className="w-full h-full object-contain"/>
-                      <img src="/src/assets/stable4.jpeg" alt="" className="w-full h-full object-contain"/>
-                      <img src="/src/assets/stable4.jpeg" alt="" className="w-full h-full object-contain"/>  
+                      <img src="/stable4.jpeg" alt="" className="w-full h-full object-contain"/>
+                      <img src="/stable4.jpeg" alt="" className="w-full h-full object-contain"/>
+                      <img src="/stable4.jpeg" alt="" className="w-full h-full object-contain"/>
+                      <img src="/stable4.jpeg" alt="" className="w-full h-full object-contain"/>  
                     </div>     
 
                     <div className="grid grid-cols-[1fr_2fr] md:w-[508px] gap-2">
@@ -108,7 +108,7 @@ const { productId } = useParams();
                       </div>
                       <div className="h-13 flex justify-center items-center gap-3">
                        
-                         <button className="h-12 border rounded flex justify-center items-center gap-2 text-gray-700 hover:bg-gray-100 col-span-3 mt-2">
+                         <button className="h-12 w-40 border rounded flex justify-center items-center gap-2 text-gray-700 hover:bg-gray-100 col-span-3 mt-2">
                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
                        <span>Wishlist</span>
                     </button>
@@ -128,7 +128,7 @@ const { productId } = useParams();
 
             <p className="text-3xl">Customer Reviews</p>
 
-            <p>xxxxx </p>
+            
             <div className="flex items-center space-x-2 bg-white rounded-full shadow-md p-2 border">
                 <input 
                   type="text"

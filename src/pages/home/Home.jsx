@@ -4,11 +4,11 @@ import CartContext from '/src/context/CartContext';
 const Homepage = () => {
     const {addItem} = useContext(CartContext);
     const products = [
-        { id: 1, name: 'Loveseat Sofa', price: 199.00, oldPrice: 340.00, image: 'src/assets/a1.png' },
-        { id: 2, name: 'Table Lamp', price: 24.99, image: 'src/assets/a2.jpeg' },
-        { id: 3, name: 'Beige Table Lamp', price: 24.99, image: 'src/assets/a3.jpeg' },
-        { id: 4, name: 'Bamboo basket', price: 24.99, image: 'src/assets/a4.jpeg' },
-        { id: 5, name: 'Toaster', price: 224.99, image: 'src/assets/a2.jpeg' }
+        { id: 1, name: 'Loveseat Sofa', price: 199.00, oldPrice: 340.00, image: '/a1.png' },
+        { id: 2, name: 'Table Lamp', price: 24.99, image: '/a2.jpeg' },
+        { id: 3, name: 'Beige Table Lamp', price: 24.99, image: '/a3.jpeg' },
+        { id: 4, name: 'Bamboo basket', price: 24.99, image: '/a4.jpeg' },
+        { id: 5, name: 'Toaster', price: 224.99, image: '/a2.jpeg' }
     ];
 
     const [favorites, setFavorites] = useState({});
@@ -16,9 +16,9 @@ const Homepage = () => {
    
     const [currentSlide, setCurrentSlide] = useState(0);
     const carouselImages = [
-        "src/assets/Heroimg.png",
-        "src/assets/g1.png",
-        "src/assets/g2.png"
+        "/Heroimg.png",
+        "/g1.png",
+        "/g2.png"
     ];
     
     useEffect(() => {
@@ -135,11 +135,11 @@ const Homepage = () => {
 
             <section className="w-full max-w-7xl mx-auto mt-12">
                 <div className="grid gap-3 md:grid-cols-2 md:gap-4">
-                    <img src="src/assets/g1.png" alt="Image 1" className="w-full h-auto"/>
+                    <img src="/g1.png" alt="Image 1" className="w-full h-auto"/>
 
                     <div className="grid gap-2 md:grid-rows-2 md:gap-4">
-                        <img src="src/assets/g2.png" alt="Image 2" className="w-full h-auto"/>
-                        <img src="src/assets/g3.png" alt="Image 3" className="w-full h-auto"/>
+                        <img src="/g2.png" alt="Image 2" className="w-full h-auto"/>
+                        <img src="/g3.png" alt="Image 3" className="w-full h-auto"/>
                     </div>
                 </div>
             </section>
@@ -221,15 +221,15 @@ const Homepage = () => {
 
             {/* cashback */}
             <div className="w-full max-w-7xl mx-auto grid grid-cols-2 grid-rows-1 gap-2 md:flex justify-center md:gap-4 mt-8">
-                <img src="/src/assets/card2.png" alt="" />
-                <img src="/src/assets/card2.png" alt="" />
-                <img src="/src/assets/card2.png" alt="" />
-                <img src="/src/assets/card2.png" alt="" />
+                <img src="card2.png" alt="" />
+                <img src="card2.png" alt="" />
+                <img src="card2.png" alt="" />
+                <img src="card2.png" alt="" />
             </div>
 
             {/* lower prices */}
             <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-15 md:w-476 bg-gray-200 mt-5">
-                <img src="/src/assets/close2.png" alt="" />
+                <img src="close2.png" alt="" />
                 <div className="flex flex-col gap-5 p-4">
                     <h3 className='text-2xl text-blue-400'>Save up to 35% OFF</h3>
                     <h1 className='text-4xl'>HUNDREDS OF <br /> New lower prices!</h1>
@@ -245,19 +245,19 @@ const Homepage = () => {
                 </div>
                 <div className="container self-center flex flex-col items-center justify-center md:flex-row md gap-4 ">
                     <div className="flex flex-col">
-                        <img src="/src/assets/article.png" alt="" />
+                        <img src="article.png" alt="" />
                         <h3 className='text-2xl'> 7 ways to decor your home</h3>
                         <p className='underline underline-offset-4'>Read more →</p>
                     </div>
 
                     <div className="flex flex-col">
-                        <img src="/src/assets/article.png" alt="" />
+                        <img src="article.png" alt="" />
                         <h3 className='text-2xl'> Kitchen organization</h3>
                         <p className='underline underline-offset-4'>Read more →</p>
                     </div>
 
                     <div className="flex flex-col">
-                        <img src="/src/assets/article.png" alt="" />
+                        <img src="article.png" alt="" />
                         <h3 className='text-2xl'>Decor your bedroom</h3>
                         <p className='underline underline-offset-4'>Read more →</p>
                     </div>

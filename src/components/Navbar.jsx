@@ -75,12 +75,12 @@ function Navbar() {
          
          <div className="flex gap-2">
           
-            <img className="hidden md:block" src="src/assets/search.png" alt="" />
-            <img className="hidden md:block" src="src/assets/usercircle.png" alt="" />
+            <img className="hidden md:block" src="/search.png" alt="" />
+            <img className="hidden md:block" src="/usercircle.png" alt="" />
           
             {/* cart cmpnent */}
             <Link to='/cart' className="flex items-center relative">
-            <img className="h-6 w-6" src="src/assets/cart.png" alt="Shopping Cart" />
+            <img className="h-6 w-6" src="/cart.png" alt="Shopping Cart" />
             {numberOfCartItems > 0 && (
  
             <div className="ml-1 bg-black w-[20px] h-[20px] rounded-full text-white text-xs flex items-center justify-center font-bold">

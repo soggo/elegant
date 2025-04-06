@@ -53,7 +53,7 @@ const Shop = () => {
         {/* Hero Section */}
         <div className="relative text-center mb-10 w-[310px] md:w-[1120px]">
           <img
-            src="/src/assets/shop.png"
+            src="/shop.png"
             alt="Shop Banner"
             className="w-full h-[308px] object-cover md:h-[392px]"
           />
@@ -76,14 +76,14 @@ const Shop = () => {
                 <div className="flex gap-2">
                   <button className="p-1">
                     <img
-                      src="/src/assets/sideby.png"
+                      src="/sideby.png"
                       alt="Grid view"
                       className="w-5 h-5"
                     />
                   </button>
                   <button className="p-1">
                     <img
-                      src="/src/assets/upby.png"
+                      src="/upby.png"
                       alt="List view"
                       className="w-5 h-5"
                     />
