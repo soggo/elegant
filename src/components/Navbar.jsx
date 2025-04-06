@@ -47,8 +47,8 @@ function Navbar() {
 
  
   return (
-    <nav className="w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <nav className="w-full sticky top-0 z-50 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-2">
         <div className="flex items-center justify-between">
           <button 
             ref={btnRef}
@@ -62,7 +62,7 @@ function Navbar() {
           </button>
           
           <div className="pt-2">
-            <h1 className="text-2xl">3elegant.</h1>
+            <h1 className="text-3xl font-semibold">3elegant.</h1>
           </div>
 
           <div className="hidden md:flex space-x-6">

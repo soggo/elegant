@@ -1,8 +1,8 @@
 const Contact = () => {
   return(
       <main className="w-81 md:w-280  flex flex-col items-center mx-auto">
-      <div>
-          <p className="text-5xl w-full font-medium ">
+      <div className="self-start mb-10">
+          <p className="text-5xl w-full font-medium">
           We believe in sustainable decor. <br /> We're passionate about <br /> life at home.
           </p>
           <p>Our features timeless furniture, with natural fabrics, curved lines, plenty of mirrors and classic design, which <br /> can be incorporated into any decor project. The pieces enchant for their sobriety, to last for generations, <br />faithful to the shapes of each period, with a touch of the present</p>
@@ -16,10 +16,10 @@ const Contact = () => {
                   <p>3legant is a gift & decorations store based in HCMC, Vietnam. Est since 2019. 
                   Our customer service is always prepared to support you 24/7</p>
 
-                  <p>Shop Now -=</p>
+                  <p>Shop Now →</p>
               </div>
           </section>
-          <p className="text-3xl text-center">Contact Us</p>
+          <p className="text-3xl text-center m-5">Contact Us</p>
 
           <div className="flex flex-col md:flex-row gap-3">
 

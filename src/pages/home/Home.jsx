@@ -1,50 +1,123 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import CartContext from '/src/context/CartContext'; 
-const Homepage = () => {
 
-    const {addItem} = useContext(CartContext)
+const Homepage = () => {
+    const {addItem} = useContext(CartContext);
     const products = [
         { id: 1, name: 'Loveseat Sofa', price: 199.00, oldPrice: 340.00, image: 'src/assets/a1.png' },
         { id: 2, name: 'Table Lamp', price: 24.99, image: 'src/assets/a2.jpeg' },
         { id: 3, name: 'Beige Table Lamp', price: 24.99, image: 'src/assets/a3.jpeg' },
         { id: 4, name: 'Bamboo basket', price: 24.99, image: 'src/assets/a4.jpeg' },
         { id: 5, name: 'Toaster', price: 224.99, image: 'src/assets/a2.jpeg' }
-      ];
+    ];
 
-      const [favorites, setFavorites] = useState({});
-      const handleDirectAddToCart = (products) => {
+    const [favorites, setFavorites] = useState({});
+    
+   
+    const [currentSlide, setCurrentSlide] = useState(0);
+    const carouselImages = [
+        "src/assets/Heroimg.png",
+        "src/assets/g1.png",
+        "src/assets/g2.png"
+    ];
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [carouselImages.length]);
+    
+    const goToSlide = (index) => {
+        setCurrentSlide(index);
+    };
+    
+    const goToPrevious = () => {
+        setCurrentSlide((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
+    };
+    
+    const goToNext = () => {
+        setCurrentSlide((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
+    };
+    
+    const handleDirectAddToCart = (products) => {
         console.log("Adding product directly from Shop:", products);
         addItem({
-          ...products,
-          quantity:1
-        })
-    }
+            ...products,
+            quantity: 1
+        });
+    };
 
-      const toggleFavorite = (id) => {
+    const toggleFavorite = (id) => {
         setFavorites(prev => ({
-          ...prev,
-          [id]: !prev[id]
+            ...prev,
+            [id]: !prev[id]
         }));
-      };
+    };
+    
     return (
-        <div className="overflow-x-hidden"> 
-            {/* Hero section */}
-            <section id="hero" className="px-4 py-8 md:px-6 lg:px-8 max-w-7xl mx-auto">
-            
-                <div className="w-full flex justify-center">
-                    <div className="max-w-[311px] md:max-w-[600px] lg:max-w-[800px] mx-auto relative border border-gray-200">
-                        <img src="src/assets/Heroimg.png" alt="Hero" className="w-full h-auto object-cover"/>
-                        <div className="absolute bottom-10 w-full flex justify-center">
-                            <div className="btncontainer flex gap-3 items-center">
-                                <button className="rounded-2xl bg-white w-8 h-3"></button>
-                                <button className="rounded-2xl bg-white w-2 h-2"></button>
-                                <button className="rounded-2xl bg-white w-2 h-2"></button>
+        <div className="overflow-x-hidden w-full flex flex-col items-center mx-auto px-4"> 
+            {/* Hero section with Carousel */}
+            <section id="hero" className="py-8 w-full max-w-7xl mx-auto">
+                <div className="w-fullflex justify-center">
+                    <div className="w-full relative border border-gray-200 rounded-lg overflow-hidden">
+                        {/* Image Container */}
+                        <div className="relative w-full h-64 md:h-96">
+                            {carouselImages.map((src, index) => (
+                                <div
+                                    key={index}
+                                    className={`absolute w-full h-full transition-opacity duration-500 ${
+                                        index === currentSlide ? "opacity-100" : "opacity-0"
+                                    }`}
+                                >
+                                    <img
+                                        src={src}
+                                        alt={`Slide ${index + 1}`}
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                        
+                        {/* Side Navigation Buttons */}
+                        <button
+                            onClick={goToPrevious}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all"
+                            aria-label="Previous slide"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+                        
+                        <button
+                            onClick={goToNext}
+                            className="absolute right-4 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all"
+                            aria-label="Next slide"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                <path d="M9 18l6-6-6-6" />
+                            </svg>
+                        </button>
+                        
+                        {/* Indicators at Bottom */}
+                        <div className="absolute bottom-6 w-full flex justify-center">
+                            <div className="flex gap-3 items-center">
+                                {carouselImages.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => goToSlide(index)}
+                                        className={`rounded-2xl bg-white transition-all duration-300 ${
+                                            index === currentSlide ? "w-8 h-3" : "w-2 h-2"
+                                        }`}
+                                        aria-label={`Go to slide ${index + 1}`}
+                                    ></button>
+                                ))}
                             </div>
                         </div>
                     </div>
                 </div>
                 
-           
                 <div className="mt-8 w-full">
                     <div className="flex flex-col md:flex-row gap-3.5 justify-between items-center">
                         <h1 className="text-4xl md:text-6xl font-bold">
@@ -60,10 +133,8 @@ const Homepage = () => {
                 </div>
             </section>
 
-    
-            <section className="px-4 md:px-6 lg:px-8 max-w-7xl mx-auto mt-12">
+            <section className="w-full max-w-7xl mx-auto mt-12">
                 <div className="grid gap-3 md:grid-cols-2 md:gap-4">
-     
                     <img src="src/assets/g1.png" alt="Image 1" className="w-full h-auto"/>
 
                     <div className="grid gap-2 md:grid-rows-2 md:gap-4">
@@ -73,12 +144,11 @@ const Homepage = () => {
                 </div>
             </section>
 
-
-            {/* new arivals */}
-            <section>
-                <div className="flex items-end justify-between">
+            {/* new arrivals */}
+            <section className='mt-10 w-full max-w-7xl mx-auto'>
+                <div className="flex items-end justify-between mb-10">
                 <h1 className="text-3xl" >New Arrivals</h1>
-                <p> More products</p>
+                <p className='border-b'> More products →</p>
                 </div>
                
      <div className="w-full max-w-6xl mx-auto">
@@ -149,11 +219,8 @@ const Homepage = () => {
     </div>
             </section>
 
-
-
-            {/* cahsback */}
-
-            <div className="grid grid-cols-2 grid-rows-1 gap-2 md:flex justify-center md:gap-4">
+            {/* cashback */}
+            <div className="w-full max-w-7xl mx-auto grid grid-cols-2 grid-rows-1 gap-2 md:flex justify-center md:gap-4 mt-8">
                 <img src="/src/assets/card2.png" alt="" />
                 <img src="/src/assets/card2.png" alt="" />
                 <img src="/src/assets/card2.png" alt="" />
@@ -161,55 +228,51 @@ const Homepage = () => {
             </div>
 
             {/* lower prices */}
-
-            <section className="flex flex-col md:flex-row items-center gap-15 bg-gray-200">
+            <section className="w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-15 md:w-476 bg-gray-200 mt-5">
                 <img src="/src/assets/close2.png" alt="" />
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5 p-4">
                     <h3 className='text-2xl text-blue-400'>Save up to 35% OFF</h3>
                     <h1 className='text-4xl'>HUNDREDS OF <br /> New lower prices!</h1>
                     <p>It's more affordable tahn ever to give every room in your home a stylish makeover</p>
                 </div>
             </section>
 
-
             {/* articles */}
-
-            <section className='flex flex-col border border-amber-500 '>
-            <div className="flex items-center justify-between">
+            <section className='flex flex-col mt-5 w-full max-w-7xl mx-auto'>
+            <div className="flex items-center justify-between md:px-22 mb-5">
                 <h1 className="text-3xl" >Articles</h1>
-                <p> More Articles</p>
+                <p className='border-b'> More Articles →</p>
                 </div>
                 <div className="container self-center flex flex-col items-center justify-center md:flex-row md gap-4 ">
                     <div className="flex flex-col">
                         <img src="/src/assets/article.png" alt="" />
                         <h3 className='text-2xl'> 7 ways to decor your home</h3>
-                        <p>Read more</p>
+                        <p className='underline underline-offset-4'>Read more →</p>
                     </div>
-
 
                     <div className="flex flex-col">
                         <img src="/src/assets/article.png" alt="" />
                         <h3 className='text-2xl'> Kitchen organization</h3>
-                        <p>Read more</p>
+                        <p className='underline underline-offset-4'>Read more →</p>
                     </div>
 
                     <div className="flex flex-col">
                         <img src="/src/assets/article.png" alt="" />
                         <h3 className='text-2xl'>Decor your bedroom</h3>
-                        <p>Read more</p>
+                        <p className='underline underline-offset-4'>Read more →</p>
                     </div>
                     </div>
             </section>
 
             {/* News Letter */}
-            <div className="flex flex-col items-center justify-center p-10 text-center">
+            <div className="flex flex-col items-center justify-center p-10 text-center w-full max-w-7xl mx-auto">
                 <h1 className="text-3xl">   
                     Join Our news letter
                 </h1>
                 <p>Sign up for deals, new products and promotions</p>
 
-                <form action="" method="post">
-                    <input type="text"  placeholder='Email address' className=' border-b-1'/>
+                <form action="" method="post" className="w-full max-w-md mt-4">
+                    <input type="text" placeholder='Email address' className='border-b-1 w-full'/>
                 </form>
             </div>
         </div>
