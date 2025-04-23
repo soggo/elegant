@@ -43,7 +43,7 @@ const { productId } = useParams();
   if (!product) {
     return (
       <div className="text-center py-20 text-xl font-semibold">
-         Wayo! Product not found. Check the link address?
+        Product not found. Check the link address?
       </div>
     );
   }
@@ -57,7 +57,7 @@ const { productId } = useParams();
 
               <div className="flex flex-col md:flex-row">
                   <div className="flex">
-                  <img src={product.image} alt="" />
+                  <img src={"/"+product.image} alt="" />
                   </div>
 
 
@@ -73,8 +73,8 @@ const { productId } = useParams();
                  </div>
                     <hr />
 
-                    <p>Offer expires in:</p>
-                    <div className="bg-red-100 w-12 h-12"></div>
+                    {/* <p>Offer expires in:</p>
+                    <div className="bg-red-100 w-12 h-12"></div> */}
                     <p>Measurements</p>
                     <p>17 1/2x20 5/8</p>
                     <p>choose color &gt;</p>
