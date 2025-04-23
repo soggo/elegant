@@ -201,7 +201,7 @@ const Checkout = () => {
 
         {/* --- Right Column: Order Summary --- */}
         <div className="w-full md:w-1/4 lg:w-1/3">
-          <div className=" p-6 rounded-lg shadow-sm border sticky top-8">
+          <div className=" p-6 rounded-lg shadow-sm border sticky top-28">
             <h2 className="text-lg font-semibold mb-4 border-b pb-2">Order summary</h2>
 
             {/* === Item List with Quantity Controls === */}
