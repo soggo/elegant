@@ -2,15 +2,15 @@ const Blog = () => {
  
 
     const bItems = [
-        {id:1, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'src/assets/blog.png'},
-        {id:2, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'src/assets/blog.png'},
-        {id:3, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'src/assets/blog.png'},
-        {id:4, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'src/assets/blog.png'},
-        {id:5, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'src/assets/blog.png'},
-        {id:6, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'src/assets/blog.png'},
-        {id:7, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'src/assets/blog.png'},
-        {id:8, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'src/assets/blog.png'},
-        {id:9, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'src/assets/blog.png'},      
+        {id:1, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'blog.png'},
+        {id:2, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'blog.png'},
+        {id:3, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'blog.png'},
+        {id:4, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'blog.png'},
+        {id:5, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'blog.png'},
+        {id:6, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'blog.png'},
+        {id:7, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'blog.png'},
+        {id:8, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'blog.png'},
+        {id:9, title:'7 ways to decor your home like a professional', dat:'October 16,2023', image:'blog.png'},      
 
     ]
     return (
@@ -18,7 +18,7 @@ const Blog = () => {
         {/* Hero Section */}
                 <div className="relative text-center mb-10 w-[310px] md:w-[1120px]">
                     <img 
-                        src="/src/assets/shop.png" 
+                        src="/shop.png" 
                         alt="Shop Banner" 
                         className="w-full h-[308px] object-cover md:h-[392px]"
                     />
@@ -32,7 +32,7 @@ const Blog = () => {
 
                 </div>
                 <div className="w-[310px] md:w-[1120px]">
-                        <div className="bg-red-500 h-[40px]"></div>
+                       
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                             {bItems.map((i)=>{

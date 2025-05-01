@@ -9,7 +9,7 @@ const hidePaths = ['/login', '/signup'];
   }
  
     return (
-      <section className="footercontainer">
+      <section className="footercontainer mt-20">
       <footer className="bg-black">
         <div className="container flex flex-col items-center justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0 border-b-1 border-white ">
           <div className="flex flex-col md:flex-row gap-3 items-center ">
@@ -29,7 +29,7 @@ const hidePaths = ['/login', '/signup'];
 
        <div className="container flex flex-col items-center justify-between px-6 py-10 mx-auto space-y-8 md:flex-row md:space-y-0">
         <div className="">
-        <p className="text-white"> Copyright 2025 3 eleant All Rights Secured</p>
+        <p className="text-white"> &copy; 2025 3elegant All Rights Resrved </p>
         <p>Priacy policy</p>
         </div>
 

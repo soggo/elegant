@@ -194,13 +194,13 @@ const Cart = () => {
                         type="radio"
                         id="free-shipping"
                         name="shipping"
-                        value=".21"
-                        checked ={selectedShippingCost === .21} 
+                        value="21"
+                        checked ={selectedShippingCost === 21} 
                         onChange={handleShippingChange}   
                         className="mr-2 accent-black"
                         />
                         <p>Pick Up</p>
-                        <p className='ml-auto'>+21%</p>
+                        <p className='ml-auto'>+21</p>
                     </div>
                 </div>
 
@@ -211,9 +211,10 @@ const Cart = () => {
                      <br className='w-100' />
                     <span className="text-sm">${totalAmount}</span>
                 </div>
+                <hr />
                 <div className="flex justify-between">
                     <span className="text-sm">Total</span>
-                    <span className="text-sm">{finalTotal}</span>
+                    <span className="text-lg">${finalTotal}</span>
                 </div>
                 </div>
 

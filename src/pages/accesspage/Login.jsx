@@ -24,11 +24,11 @@ const Login = () => {
   };
 
   return (
-    <div className="max-h-screen flex flex-col md:flex-row">
+    <div className="max-h-screen flex flex-col md:flex-row items-center justify-center border mt-20">
       {/* Left side image */}
-      <div className="md:block md:w-1/2">
+      <div className="block w-1/2">
         <img 
-          src="/src/assets/log.png" 
+          src="/log.png" 
           alt="Signup illustration" 
           className="w-full h-[430px] object-cover"
         />

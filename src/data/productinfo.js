@@ -7,5 +7,5 @@ export const products = [
     { id: 5, name: 'Lamp', price: 39.00, category: 'Living Room', isNew: true, discount: "50", image: 'a3.jpeg' },
     { id: 6, name: 'Light Beige Pillow', price: 3.99, category: 'Living Room', image: 'a3.jpeg' },
     { id: 7, name: 'Table Lamp', price: 39.99, category: 'Living Room', image: 'a3.jpeg' },
-    { id: 8, name: 'Bamboo Basket', price: 9.99, category: 'Living Room', image: 'a3.jpeg' },
+    { id: 8, name: 'Bamboo Basket', price: 9.99, category: 'Bedroom', image: 'a3.jpeg' },
 ];

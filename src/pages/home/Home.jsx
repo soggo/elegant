@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react';
+import { Link } from 'react-router';
 import CartContext from '/src/context/CartContext'; 
 
 const Homepage = () => {
@@ -134,21 +135,45 @@ const Homepage = () => {
             </section>
 
             <section className="w-full max-w-7xl mx-auto mt-12">
-                <div className="grid gap-3 md:grid-cols-2 md:gap-4">
-                    <img src="/g1.png" alt="Image 1" className="w-full h-auto"/>
+  <div className="grid gap-3 md:grid-cols-2 md:gap-4 ">
+    <div className="relative ">
+      <img src="/g1.png" alt="Living Room Furniture" className="w-full h-auto"/>
+      <div className="absolute inset-0 p-8 flex flex-col justify-start ">
+        <h2 className="text-3xl font-bold">Living Room</h2>
+        <Link to="/shop" className="text-base mt-2 inline-flex items-center underline underline-offset-4">
+          Shop Now →
+        </Link>
+      </div>
+    </div>
 
-                    <div className="grid gap-2 md:grid-rows-2 md:gap-4">
-                        <img src="/g2.png" alt="Image 2" className="w-full h-auto"/>
-                        <img src="/g3.png" alt="Image 3" className="w-full h-auto"/>
-                    </div>
-                </div>
-            </section>
-
+    <div className="grid gap-2 md:grid-rows-2 md:gap-4">
+      <div className="relative">
+        <img src="/g2.png" alt="Bedroom Furniture" className="w-full h-auto"/>
+        <div className="absolute inset-0 p-8 flex flex-col justify-end">
+          <h2 className="text-3xl font-bold">Bedroom</h2>
+          <Link to="/shop" className="text-base mt-2 inline-flex items-center underline underline-offset-4">
+            Shop Now →
+          </Link>
+        </div>
+      </div>
+      
+      <div className="relative">
+        <img src="/g3.png" alt="Kitchen Appliances" className="w-full h-auto"/>
+        <div className="absolute inset-0 p-8 flex flex-col justify-end">
+          <h2 className="text-3xl font-bold">Kitchen</h2>
+          <Link to="/shop" className="text-base mt-2 inline-flex items-center underline underline-offset-4">
+            Shop Now →
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
             {/* new arrivals */}
             <section className='mt-10 w-full max-w-7xl mx-auto'>
                 <div className="flex items-end justify-between mb-10">
-                <h1 className="text-3xl" >New Arrivals</h1>
-                <p className='border-b'> More products →</p>
+                <h1 className="text-3xl" >New <br /> Arrivals</h1>
+              <Link to={'/shop'}>  <p className='border-b'> More Products →</p> </Link>
                 </div>
                
      <div className="w-full max-w-6xl mx-auto">
@@ -156,7 +181,8 @@ const Homepage = () => {
      
             <div className="flex gap-8 overflow-x-auto pb-4 scrollbar-none">
             {products.map((product) => (
-                <div key={product.id} className="flex-none w-48 mx-2 relative group">
+                  <Link to={`/product/${product.id}`}>
+                <div key={product.id} className="flex-none  mx-2 relative group">
       
                 <div className="absolute top-0 left-0 z-10 flex flex-col items-start">
                     <span className="bg-gray-800 text-white text-xs px-2 py-1">NEW</span>
@@ -164,18 +190,18 @@ const Homepage = () => {
                 </div>
                 
                 {/* Product image */}
-                <div className="relative overflow-hidden p-5 w-60 h-80">
+                <div className="relative overflow-hidden w-60 h-80">
                     <img 
                     src={product.image} 
                     alt={product.name} 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                     />
                     
                     {/* Hover overlay */}
                     <div className="absolute inset-0 bg-opacity-20 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-end">
                     <button
                   onClick={() => handleDirectAddToCart(product)}
-                     className="bg-black text-white py-2 px-4 text-sm w-3/4">
+                     className="bg-black text-white py-2 px-4 text-sm w-3/4 rounded-md">
                         Add to cart
                     </button>
                     <button 
@@ -213,6 +239,7 @@ const Homepage = () => {
                     </div>
                 </div>
                 </div>
+                </Link>
             ))}
             </div>
         </div>
@@ -220,7 +247,7 @@ const Homepage = () => {
             </section>
 
             {/* cashback */}
-            <div className="w-full max-w-7xl mx-auto grid grid-cols-2 grid-rows-1 gap-2 md:flex justify-center md:gap-4 mt-8">
+            <div className="w-full max-w-7xl mx-auto grid grid-cols-2 grid-rows-1 gap-2 md:flex justify-center md:gap-4 my-10">
                 <img src="card2.png" alt="" />
                 <img src="card2.png" alt="" />
                 <img src="card2.png" alt="" />
@@ -241,39 +268,79 @@ const Homepage = () => {
             <section className='flex flex-col mt-5 w-full max-w-7xl mx-auto'>
             <div className="flex items-center justify-between md:px-22 mb-5">
                 <h1 className="text-3xl" >Articles</h1>
-                <p className='border-b'> More Articles →</p>
+              <Link to='/blog'> <p className='border-b'> More Articles →</p></Link>  
                 </div>
                 <div className="container self-center flex flex-col items-center justify-center md:flex-row md gap-4 ">
+                <Link to='/blog'>
                     <div className="flex flex-col">
                         <img src="article.png" alt="" />
                         <h3 className='text-2xl'> 7 ways to decor your home</h3>
                         <p className='underline underline-offset-4'>Read more →</p>
                     </div>
+                </Link>
 
+                <Link to='/blog'>
                     <div className="flex flex-col">
                         <img src="article.png" alt="" />
                         <h3 className='text-2xl'> Kitchen organization</h3>
                         <p className='underline underline-offset-4'>Read more →</p>
                     </div>
-
+                
+                </Link>
+                
+                <Link to='/blog'>
                     <div className="flex flex-col">
                         <img src="article.png" alt="" />
                         <h3 className='text-2xl'>Decor your bedroom</h3>
                         <p className='underline underline-offset-4'>Read more →</p>
                     </div>
+                </Link>
                     </div>
+                
             </section>
 
             {/* News Letter */}
-            <div className="flex flex-col items-center justify-center p-10 text-center w-full max-w-7xl mx-auto">
+            <div className="flex flex-col items-center justify-center p-10 text-center w-full max-w-7xl mt-5">
                 <h1 className="text-3xl">   
                     Join Our news letter
                 </h1>
                 <p>Sign up for deals, new products and promotions</p>
 
-                <form action="" method="post" className="w-full max-w-md mt-4">
-                    <input type="text" placeholder='Email address' className='border-b-1 w-full'/>
-                </form>
+                <form 
+  action="" 
+  method="post" 
+  className="w-full max-w-md mt-4 relative"
+  onSubmit={(e) => {
+    e.preventDefault();
+    e.target.reset();
+  }}
+>
+  <input 
+    type="email" 
+    placeholder='Email address' 
+    className='border-b-1 w-full focus:outline-none px-2 pr-8'  
+  />
+  <button 
+    type="submit"
+    className="absolute right-0 top-0 h-full px-2 focus:outline-none cursor-pointer"
+    aria-label="Submit email"
+  >
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      className="h-5 w-5 text-gray-500 hover:text-gray-700 transition-colors" 
+      fill="none" 
+      viewBox="0 0 24 24" 
+      stroke="currentColor"
+    >
+      <path 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        strokeWidth={2} 
+        d="M14 5l7 7m0 0l-7 7m7-7H3" 
+      />
+    </svg>
+  </button>
+</form>
             </div>
         </div>
     );
