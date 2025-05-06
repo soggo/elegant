@@ -123,7 +123,7 @@ function Navbar() {
             <div className="w-full mt-auto pt-10">
               <Link to="/cart" className="hover:text-gray-500 py-3 border-b border-gray-300 w-full block">Cart</Link>
               <Link to="/wishlist" className="hover:text-gray-500 py-3 border-b border-gray-300 w-full block">Wishlist</Link> 
-              <button className="bg-black text-white w-full h-14 mt-4 rounded-sm cursor-pointer">Sign IN</button>
+              <Link to="/login"> <button className="bg-black text-white w-full h-14 mt-4 rounded-sm cursor-pointer">Login</button> </Link>
             </div>
           </div>
         </div>
