@@ -5,7 +5,7 @@ import CartContext from '/src/context/CartContext';
 
 const Shop = () => {
     const [favorites, setFavorites] = useState({});
-    const [selectedCategory, setSelectedCategory] = useState('Living Room');
+    const [selectedCategory, setSelectedCategory] = useState('All Rooms');
     const [priceRange, setPriceRange] = useState('All Price');
     const [sortOption, setSortOption] = useState('featured');
     const [isFilterOpen, setIsFilterOpen] = useState(false);

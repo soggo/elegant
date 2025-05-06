@@ -25,13 +25,13 @@ const Signup = () => {
   };
 
   return (
-    <div className="max-h-screen flex flex-col md:flex-row">
+    <div className="h-screen flex flex-col md:flex-row self-center items-center justify-center">
       {/* Left side image */}
       <div className="md:block md:w-1/2">
         <img 
           src="log.png" 
           alt="Signup illustration" 
-          className="w-full h-[430px] object-cover"
+          className="w-full h-[430px] md:h-screen object-cover"
         />
       </div>
       
@@ -108,7 +108,7 @@ const Signup = () => {
                 name="agreeTerms"
                 checked={formData.agreeTerms}
                 onChange={handleChange}
-                className="mr-2"
+                className="mr-2 cursor-pointer"
                 required
               />
               <span className="text-sm">
@@ -119,13 +119,13 @@ const Signup = () => {
           
           <button 
             type="submit" 
-            className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition duration-300"
+            className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition duration-300 cursor-pointer"
           >
             Sign Up
           </button>
           
-          <p className="text-center mt-4 text-sm"> Don't have an account yet? 
-            <Link to="/login" className="text-green-400 hover:underline"> Sign Up</Link>
+          <p className="text-center mt-4 text-sm">Have an account? 
+            <Link to="/login" className="text-green-400 hover:underline">Login</Link>
           </p>
         </form>
       </div>

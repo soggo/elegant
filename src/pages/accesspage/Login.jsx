@@ -24,20 +24,20 @@ const Login = () => {
   };
 
   return (
-    <div className="max-h-screen flex flex-col md:flex-row items-center justify-center border mt-20">
-      {/* Left side image */}
-      <div className="block w-1/2">
-        <img 
-          src="/log.png" 
-          alt="Signup illustration" 
-          className="w-full h-[430px] object-cover"
-        />
-      </div>
+    <div className="h-screen flex flex-col md:flex-row self-center items-center justify-center">
+    {/* Left side image */}
+    <div className="md:block md:w-1/2">
+      <img 
+        src="log.png" 
+        alt="Signup illustration" 
+        className="w-full h-[430px] md:h-screen object-cover"
+      />
+    </div>
       
       {/* Sign Up Form */}
-      <div className="w-full md:w-1/2 flex items-center justify-center p-8">
+      <div className="w-full md:w-1/2 flex items-center justify-center p-4">
         <form onSubmit={handleSubmit} className="w-full max-w-md">
-          <h2 className="text-2xl font-bold mb-6 text-start">Sign In</h2>
+          <h2 className="text-2xl font-bold mb-6 text-start">Login</h2>
         
           
           <div className="mb-4">
@@ -68,7 +68,7 @@ const Login = () => {
                 type="button" 
                 className="absolute right-3 top-1/2 transform -translate-y-1/2"
               >
-                👁️
+                
               </button>
             </div>
           </div>
@@ -80,7 +80,7 @@ const Login = () => {
                 name="agreeTerms"
                 checked={formData.agreeTerms}
                 onChange={handleChange}
-                className="mr-2"
+                className="mr-2 cursor-pointer"
                 required
               />
               <span className="text-sm">
@@ -91,9 +91,9 @@ const Login = () => {
           
           <button 
             type="submit" 
-            className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition duration-300"
+            className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition duration-300 cursor-pointer"
           >
-            Sign Up
+            Login
           </button>
           
           <p className="text-center mt-4 text-sm"> Don't have an account yet? 
