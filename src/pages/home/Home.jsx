@@ -248,10 +248,10 @@ const Homepage = () => {
 
             {/* cashback */}
             <div className="w-full max-w-7xl mx-auto grid grid-cols-2 grid-rows-1 gap-2 md:flex justify-center md:gap-4 my-10">
+                <img src="card1.png" alt="" />
                 <img src="card2.png" alt="" />
-                <img src="card2.png" alt="" />
-                <img src="card2.png" alt="" />
-                <img src="card2.png" alt="" />
+                <img src="card3.png" alt="" />
+                <img src="card4.png" alt="" />
             </div>
 
             {/* lower prices */}
