@@ -188,20 +188,7 @@ const Shop = () => {
                         <div className="flex justify-between items-center mb-6">
                             <h1 className="text-lg font-bold">Filter</h1>
                             <div className="flex gap-2">
-                                <button className="p-1">
-                                    <img
-                                        src="/sideby.png"
-                                        alt="Grid view"
-                                        className="w-5 h-5"
-                                    />
-                                </button>
-                                <button className="p-1">
-                                    <img
-                                        src="/upby.png"
-                                        alt="List view"
-                                        className="w-5 h-5"
-                                    />
-                                </button>
+                               
                             </div>
                         </div>
 

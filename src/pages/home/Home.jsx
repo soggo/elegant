@@ -9,7 +9,7 @@ const Homepage = () => {
         { id: 2, name: 'Table Lamp', price: 24.99, image: '/a2.jpeg' },
         { id: 3, name: 'Beige Table Lamp', price: 24.99, image: '/a3.jpeg' },
         { id: 4, name: 'Bamboo basket', price: 24.99, image: '/a4.jpeg' },
-        { id: 5, name: 'Toaster', price: 224.99, image: '/a2.jpeg' }
+        { id: 5, name: 'Toaster', price: 224.99, image: '/a5.jpeg' }
     ];
 
     const [favorites, setFavorites] = useState({});

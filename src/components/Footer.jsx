@@ -21,7 +21,7 @@ const hidePaths = ['/login', '/signup'];
           <div className="flex flex-col items-center md:flex-row gap-6">
             <Link to="/" className="text-white hover:text-gray-500">Home</Link>
             <Link to="/shop" className="text-white hover:text-gray-500">Shop</Link>
-            <Link to="/product" className="text-white hover:text-gray-500">Product</Link>
+            <Link to="/shop" className="text-white hover:text-gray-500">Product</Link>
             <Link to="/blog" className="text-white hover:text-gray-500">Blog</Link>
             <Link to="/contact" className="text-white hover:text-gray-500">Contact Us</Link>
           </div>      
